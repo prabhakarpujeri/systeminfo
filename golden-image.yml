@@ -7,7 +7,7 @@
     file:
       path: "{{ISO_MOUNT_POINT}}"
       state: directory
-      mode: 0775
+      mode: 0777
 
 
   - name: mount ISO
@@ -16,7 +16,7 @@
       src: "{{ISO_PATH}}"
       opts: ro
       fstype: iso9660
-      state: present
+      state: mounted
 
   - name: create New Directory
     file:
