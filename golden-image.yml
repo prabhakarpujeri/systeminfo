@@ -22,7 +22,8 @@ tasks:
     copy: src="{{KS_FILE}} dest="{{ISO_FILES_PATH}}/ks.cfg"
 
   - name: Copy isolinux.cfg
-    copy src="{{ISOLINUX_CFG}}" dest="{{ISO_FILES_PATH}}/isolinux/isolinux.cfg"
+    copy: src="{{ISOLINUX_CFG}}" dest="{{ISO_FILES_PATH}}/isolinux/isolinux.cfg"
+
   - name: Rebuild ISO
     shell: "cd {{ISO_FILES_PATH}} ; mkisofs -o {{NEW_ISO_PATH}} -b isolinux/isolinux.bin -c isolinux/boot.cat --no-emul-boot --boot-load-size 4 --boot-info-table -J -R -V disks ."
 
