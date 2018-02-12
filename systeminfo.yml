@@ -1,5 +1,5 @@
 - name: Hello World Sample
-  hosts: all
+  hosts: Golden-Config
   tasks:
     - name: Hello Message
       debug:
