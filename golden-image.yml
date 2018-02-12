@@ -3,6 +3,13 @@
   hosts: central
 
   tasks:
+  - name: create mount  Directory
+    file:
+      path: "{{ISO_MOUNT_POINT}}"
+      state: directory
+      mode: 0775
+
+
   - name: mount ISO
     mount:
       path: "{{ISO_MOUNT_POINT}}"
