@@ -26,8 +26,10 @@
 
   - name: Copy Contents to another location
     copy: 
-      src: "{{ISO_MOUNT_POINT}}" 
-      dest: "{{ISO_FILES_PATH}}"  
+      src: "{{ISO_MOUNT_POINT}}/" 
+      dest: "{{ISO_FILES_PATH}}"
+      force: yes  
+      remote_src: no
       directory_mode: yes
 
   - name: copy kickstart file
