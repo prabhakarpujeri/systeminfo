@@ -1,6 +1,7 @@
 ---
-hosts: central
-name: Guild Golden Image
+- name: Build Golden Image
+  hosts: central
+
 tasks:
   - name: mount ISO
     mount:
