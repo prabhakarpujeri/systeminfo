@@ -2,7 +2,7 @@
 - name: Build Golden Image
   hosts: central
 
-tasks:
+  tasks:
   - name: mount ISO
     mount:
       path: "{{ISO_MOUNT_POINT}}"
