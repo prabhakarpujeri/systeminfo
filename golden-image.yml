@@ -25,12 +25,7 @@
       mode: 0775
 
   - name: Copy Contents to another location
-    copy: 
-      src: "{{ISO_MOUNT_POINT}}/" 
-      dest: "{{ISO_FILES_PATH}}"
-      force: yes  
-      remote_src: no
-      directory_mode: yes
+    shell: " cp -rf {{ISO_MOUNT_POINT}}/* {{ISO_FILES_PATH}}/ "
 
   - name: copy kickstart file
     copy: 
@@ -44,6 +39,8 @@
 
   - name: Rebuild ISO
     shell: "cd {{ISO_FILES_PATH}} ; mkisofs -o {{NEW_ISO_PATH}} -b isolinux/isolinux.bin -c isolinux/boot.cat --no-emul-boot --boot-load-size 4 --boot-info-table -J -R -V disks ."
+
+
 
 
 
