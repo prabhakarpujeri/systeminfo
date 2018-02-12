@@ -35,6 +35,10 @@
 
   - name: Rebuild ISO
     shell: "cd {{ISO_FILES_PATH}} ; mkisofs -o {{NEW_ISO_PATH}} -b isolinux/isolinux.bin -c isolinux/boot.cat --no-emul-boot --boot-load-size 4 --boot-info-table -J -R -V disks ."
+  - name: unmount ISO
+    shell: "umount {{ISO_MOUNT_POINT}}"
+  - name: remove folders
+    shell: "rm -rf {{ISO_MOUNT_POINT}} {{ISO_FILES_PATH}}"
 
 
 
