@@ -8,6 +8,7 @@
       path: "{{ISO_MOUNT_POINT}}"
       src: "{{ISO_PATH}}"
       opts: ro
+      fstype: iso9660
       state: present
 
   - name: create New Directory
